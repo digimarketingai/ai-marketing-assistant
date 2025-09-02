@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             answerDiv.innerText = `請稍候，正在查找問題答案${".".repeat(dotCount)}`;
         }, 500);
 
-        const prompt = `You are a helpful assistant on a company's website. Answer the user's question strictly based on the "Known Information" provided below. Do not use any external knowledge. If the answer is not in the "Known Information", you must reply with "I'm sorry, I don't have information about that."\n\n[Known Information]\n- ${knowledge.join('\n- ')}\n\n[User's Question]\n${userQuestion}`;
+        const prompt = `You are a helpful assistant on a company's website. Answer the user's question strictly based on the "Known Information" provided below. Do not use any external knowledge. If the answer is not in the "Known Information", you must reply with "I'm sorry, I don't have information about that." in the language that the user uses.\n\n[Known Information]\n- ${knowledge.join('\n- ')}\n\n[User's Question]\n${userQuestion}`;
         
         try {
             const response = await puter.ai.chat(prompt);
